@@ -9,5 +9,11 @@ def index(request):
     context = {
         'hobbyList': hobbyList,
     }
-    return render(request,'hobby/index.html', context)
+    return render(request, 'hobby/index.html', context)
 
+def detail(request, hobbyId):
+    hobby = Hobby.objects.get(pk=hobbyId)
+    context = {
+        'hobby': hobby
+    }
+    return render(request, 'hobby/detail.html', context)
