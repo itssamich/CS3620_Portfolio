@@ -11,3 +11,9 @@ def index(request):
     }
     return render(request, 'project/index.html', context)
 
+def detail(request, projectId):
+    project = Project.objects.get(pk=projectId)
+    context = {
+        'project': project
+    }
+    return render(request, 'project/detail.html', context)

@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
 # Create your views here.
 def index(request):
-    return HttpResponse('You can reach me for now at: alexanderklein@mail.weber.edu')
+    
+    context = {}
+    return render(request, 'contact/index.html', context)

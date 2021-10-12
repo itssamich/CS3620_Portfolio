@@ -1,2 +1,7 @@
+{% extends 'hobby/base.html'%}
+
+{% block body %}
 <h1>{{ hobby.hobby_name }}</h1>
 <h2>{{ hobby.hobby_desc }}</h2>
+<img class="card" height = "150px" src="{{hobby.hobby_img}}">
+{% endblock %}

@@ -1,8 +1,30 @@
-{% for proj in projList %}
-    <ul>
-        <li>
-            {{ proj.proj_name }} - {{ proj.proj_desc }}
-        </li>
-    </ul>
+{% extends 'hobby/base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hobbies</title>
+</head>
+<body>
+    {% block body %}
+        {% for proj in projList %}
+        <ul>
+            <li>
+                <div class="row offset-md-1">
+                    <div class="col-md-5">
+                        <h2>{{ proj.proj_name }}</h2>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="{%  url 'portfolio:detail' proj.id %}" class="btn btn-success">Details</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
 
-{% endfor %}
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

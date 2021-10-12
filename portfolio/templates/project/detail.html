@@ -1,0 +1,7 @@
+{% extends 'hobby/base.html'%}
+
+{% block body %}
+<h1>{{ project.proj_name }}</h1>
+<h2>{{ project.proj_desc }}</h2>
+<img class="card" height = "150px" src="{{project.proj_img}}">
+{% endblock %}
