@@ -1,7 +1,27 @@
 body {
     background-color: lightyellow;
+    overflow: hidden;
 }
 
 ul{
     list-style: none;
+}
+
+.navbar-brand {
+    margin-left: 1rem !important;
+    font-size: 2rem !important;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: red !important;
+}
+
+.nav-link {
+    color: purple !important;
+    padding-right: 2rem !important;
+}
+
+.nav-link:hover{
+    color: blueviolet !important;
 }
