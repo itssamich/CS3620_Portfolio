@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
+from django.contrib.auth.decorators import login_required
 from portfolio.forms import projForm
 from .models import Project
 from django.template import loader
@@ -20,7 +20,7 @@ def detail(request, projectId):
     }
     return render(request, 'project/detail.html', context)
 
-    
+@login_required
 def createProj(request):
     form = projForm(request.POST or None)
 
@@ -30,6 +30,7 @@ def createProj(request):
     
     return render(request, 'project/projForm.html', {'form': form})
 
+@login_required
 def updateProj(request, projectId):
     project = Project.objects.get(id=projectId)
     form = projForm(request.POST or None, instance=project)
@@ -40,6 +41,7 @@ def updateProj(request, projectId):
 
     return render(request, 'project/projForm.html', {'form': form, 'project': project})
 
+@login_required
 def deleteProj(request, projectId):
     project = Project.objects.get(id=projectId)
 
